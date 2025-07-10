@@ -46,6 +46,49 @@ header nav a {
     object-fit: contain;
 }
 
+.contact-info-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px; /* можно меньше */
+  margin-bottom: 100px;
+  flex-wrap: wrap;
+}
+
+.working-hours,
+.address-block {
+  width: 48%;
+  box-sizing: border-box;
+  border-radius: 10px;
+  padding: 15px 20px;
+  color: white;
+  font-family: 'Arial', sans-serif;
+}
+
+
+.working-hours h3,
+.address-block h3 {
+  margin-top: 0;
+  font-size: 1.3rem;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.working-hours ul,
+.address-block ul {
+  margin: 5px 0 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.working-hours li,
+.address-block li {
+  font-size: 1rem;
+  color: #f9f9f9;
+}
+
+
+
 .hero {
     position: relative;
     height: 95vh;

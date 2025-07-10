@@ -59,6 +59,14 @@
           "Рефинансирование",
           "Кредит на ИП/ТОО"
         ],
+        working_hours_title: "🕘 График работы",
+        working_days: "Понедельник — Воскресенье",
+        working_hours: "10:00 — 21:00",
+        address_title: "📍 Наш адрес",
+        address_line1: "Улица Маншук Маметовой, 4",
+        address_line2: "ТРЦ Керуен Сити, 3 этаж",
+        address_line3: "Кабинет C28",
+
       },
       kz: {
         heroTitle: "Қаржылық кеңес беру",
@@ -108,7 +116,13 @@
           "Рефинанаслау",
           "ЖК/ЖШС несиесі"
         ],
-
+        working_hours_title: "🕘 Жұмыс уақыты",
+        working_days: "Дүйсенбі — Жексенбі",
+        working_hours: "10:00 — 21:00",
+        address_title: "📍 Біздің мекенжайымыз",
+        address_line1: "Маншүк Мәметова көшесі, 4",
+        address_line2: "Керуен Сити СО, 3-қабат",
+        address_line3: "C28 кабинет",
       },
       en: {
         heroTitle: "Financial Consultation",
@@ -158,6 +172,13 @@
           "Refinancing",
           "Loan for Sole Proprietors/LLC"
         ],
+        working_hours_title: "🕘 Working Hours",
+        working_days: "Monday — Sunday",
+        working_hours: "10:00 AM — 9:00 PM",
+        address_title: "📍 Our Address",
+        address_line1: "4 Manshuk Mametova Street",
+        address_line2: "Keruen City Mall, 3rd Floor",
+        address_line3: "Office C28",
       }
     };
     function setLanguage(lang) {
@@ -200,11 +221,17 @@
       document.querySelector("#about h2").textContent = t.aboutTitle;
       document.querySelector("#program h2").textContent = t.extraServices;
       document.querySelector("#info_text .ZEN h2").textContent = t.aboutZen;
-      document.querySelector("#contact-form h2").textContent = t.sectionContact;
       document.querySelector("#emailForm button").textContent = t.sendBtn;
       document.querySelector(".alt-contact").textContent = t.altContact;
       document.querySelector("#social h2").textContent = t.socialFollow;
       document.querySelector("footer p").textContent = t.footerText;
+      document.getElementById("workingHoursTitle").textContent = t.working_hours_title;
+      document.getElementById("workingDays").textContent = t.working_days;
+      document.getElementById("workingHours").textContent = t.working_hours;
+      document.getElementById("addressTitle").textContent = t.address_title;
+      document.getElementById("addressLine1").textContent = t.address_line1;
+      document.getElementById("addressLine2").textContent = t.address_line2;
+      document.getElementById("addressLine3").textContent = t.address_line3;
 
       // Названия услуг
       const aboutH3s = document.querySelectorAll("#about h3");
@@ -235,8 +262,6 @@
         }
       });
     }
-
-    window.onload = () => setLanguage("kz"); // Язык по умолчанию
   </script>
 
 </head>
@@ -382,13 +407,30 @@
     </section>
 
     <section id="contact-form" class="contact-section">
-      <h2>Свяжитесь с нами</h2>
+      <div class="contact-info-wrapper">
+        <div class="working-hours">
+          <h3 id="workingHoursTitle">🕘 График работы</h3>
+          <ul>
+            <li id="workingDays">Понедельник — Воскресенье</li>
+            <li id="workingHours">10:00 — 21:00</li>
+          </ul>
+        </div>
+
+        <div class="address-block">
+          <h3 id="addressTitle">📍 Наш адрес</h3>
+          <ul>
+            <li id="addressLine1">Улица Маншук Маметовой, 4</li>
+            <li id="addressLine2">ТРЦ Керуен Сити, 3 этаж</li>
+            <li id="addressLine3">Кабинет C28</li>
+          </ul>
+        </div>
+      </div>
 
       <form id="emailForm">
         <input type="text" id="name" name="name" placeholder="Ваше имя" required>
         <input type="email" id="email" name="email" placeholder="Ваш Email" required>
         <textarea id="message" name="message" rows="5" placeholder="Ваше сообщение" required></textarea>
-        <button type="submit">Отправить по почте</button>
+        <button type="submit" id="sendBtn">Отправить по почте</button>
       </form>
 
       <p class="alt-contact">Или свяжитесь с агентом через:</p>
@@ -568,6 +610,7 @@
             : translations[currentLang].hideBtn;
         });
       });
+
     });
 
     document.getElementById('emailForm').addEventListener('submit', function (e) {
@@ -586,6 +629,11 @@
     });
   </script>
 
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      setTimeout(() => setLanguage("kz"), 0);
+    });
+  </script>
 
 </body>
 </html>
