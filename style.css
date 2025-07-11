@@ -95,15 +95,52 @@ header nav a {
 
 
 .hero {
-    position: relative;
-    height: 95vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: #fff;
-    overflow: hidden;
+  position: relative;
+  height: 95vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
 }
+
+/* ВИДЕО — только на десктопах */
+.hero video.hero-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  pointer-events: none;
+  display: block;
+}
+
+/* ФОН — синий и размытие — только для мобилок */
+.mobile-hero-background {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .hero video.hero-video {
+    display: none;
+  }
+
+  .mobile-hero-background {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom right, #004466, #002233);
+    filter: blur(8px);
+    z-index: -1;
+  }
+}
+
 
     .hero::before {
       content: '';
@@ -114,17 +151,6 @@ header nav a {
       height: 100%;
       background: rgba(0, 0, 0, 0.5);
       z-index: 1;
-    }
-
-    .hero video {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -1;
-      pointer-events: none;
     }
 
     .hero-content {
