@@ -46,6 +46,11 @@ header nav a {
     object-fit: contain;
 }
 
+.logo {
+  display: flex;
+  align-items: center;
+}
+
 .contact-info-wrapper {
   display: flex;
   justify-content: space-between;
@@ -444,6 +449,7 @@ header nav a {
   margin-bottom: 20px;
 }
 
+
 .lang-switcher button {
   background-color: #D1B139;
   color: #0B3D2E;
@@ -499,4 +505,81 @@ header nav a {
   background-color: #c08e05;
   color: #0e503c;
   transform: scale(1.1);
+}
+
+/* --- Бургер-меню --- */
+.burger-menu {
+  position: relative;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.burger-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 28px;
+  height: 20px;
+  cursor: pointer;
+  margin-right: 20px;
+  z-index: 2001;
+}
+
+.burger-icon span {
+  background-color: white;
+  height: 3px;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.menu-content {
+  position: fixed;
+  top: 80px;
+  right: -100%;
+  width: 250px;
+  background-color: #0B3D2E;
+  color: white;
+  height: calc(100% - 80px);
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  transition: right 0.3s ease;
+  z-index: 2000;
+  box-shadow: -2px 0 10px rgba(0,0,0,0.5);
+}
+
+.menu-content a {
+  color: white;
+  text-decoration: none;
+  margin: 15px 0;
+  font-size: 1.1em;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 5px;
+}
+
+#menu-toggle:checked ~ .menu-content {
+  right: 0;
+}
+
+.lang-switcher-burger {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.lang-switcher-burger button {
+  background-color: #D1B139;
+  color: #0B3D2E;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: light;
+  transition: background-color 0.3s ease;
+}
+
+.lang-switcher-burger button:hover {
+  background-color: #b89830;
 }
