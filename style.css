@@ -6,6 +6,10 @@ body {
   overflow-y: scroll;
   scrollbar-width: none;
   -ms-overflow-style: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 body::-webkit-scrollbar {
@@ -18,6 +22,7 @@ body, html {
     padding: 0;
     font-family: Georgia, 'Times New Roman', Times, serif;
     overflow-x: hidden;
+    height: 100%;
 }
 
 header {
@@ -92,104 +97,24 @@ header nav a {
   color: #f9f9f9;
 }
 
+    /* Общая обертка для контента */
+.info-wrapper {
+  background: #ebebeb;
+  color: #0b3d2e;
+  max-width: 2200px;
+  margin: auto;
+  border-radius: 0px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  text-align: center;
 
-
-.hero {
-  position: relative;
-  height: 95vh;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  color: #fff;
-  overflow: hidden;
+
+  min-height: 100vh; /* <-- ПЕРЕМЕСТИ СЮДА */
+  padding-top: 100px; /* чтобы контент не был под шапкой */
 }
-
-/* ВИДЕО — только на десктопах */
-.hero video.hero-video {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
-  pointer-events: none;
-  display: block;
-}
-
-/* ФОН — синий и размытие — только для мобилок */
-.mobile-hero-background {
-  display: none;
-}
-
-@media (max-width: 768px) {
-  .hero video.hero-video {
-    display: none;
-  }
-
-  .mobile-hero-background {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to bottom right, #004466, #002233);
-    filter: blur(8px);
-    z-index: -1;
-  }
-}
-
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 1;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2 ;
-      font-size: 20px;
-    }
-
-    .hero h1 {
-      font-size: 3em;
-      margin-bottom: 0.5em;
-    }
-
-    .hero p {
-      font-size: 1.5em;
-      margin-bottom: 1em;
-    }
-
-    .hero button {
-      padding: 1em 2em;
-      background-color: #c08e05;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-    }
-
-    /* Общая обертка для контента */
-    .info-wrapper {
-    background: linear-gradient(to bottom, #0e503c, #051d16);
-    color: #ffffff;
-    padding: 3em 1em;
-    max-width: 2200px;
-    margin: auto;
-    border-radius: 0px;
-    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.4);
-    text-align: center;
-    }
 
 
     .info-wrapper section {
@@ -201,29 +126,6 @@ header nav a {
       margin-bottom: 1em;
     }
 
-    .features {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1.5em;
-      align-items: flex-start;
-    }
-
-    .feature {
-    position: relative;
-    background-color: #48685e;
-    border-radius: 2em;
-    padding: 1em;
-    width: 260px;
-    min-width: 260px;
-    flex-shrink: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: white;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-    }
-
     #info_text {
     background-color: #0c3f2f;
     padding: 3em 1em;
@@ -231,7 +133,7 @@ header nav a {
     max-width: 1200px;
     margin: 100px auto;
     border-radius: 1em;
-    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
     }
 
     .about-content {
@@ -240,6 +142,8 @@ header nav a {
     gap: 2em;
     justify-content: center;
     align-items: flex-start;
+    margin-left: 20px;
+    margin-right: 20px;
     }
 
     .about-text {
@@ -255,7 +159,7 @@ header nav a {
     font-size: 16px;
     line-height: 1.6;
     text-align: left;
-    padding-top: 40px;
+    margin-top: 60px;
     }
 
     .about-text3{
@@ -298,6 +202,7 @@ header nav a {
     font-size: 16px;
     line-height: 1.6;
     text-align: left;
+    margin-left: 20px;
     }
 
 
@@ -345,9 +250,27 @@ header nav a {
     }
 
 .testimonial {
-  background: #051d16;
+  background: linear-gradient(0deg, #051D16, #ffffff);
   padding: 6em 1em;
   overflow: hidden;
+}
+.testimonial-image img {
+  width: 300px;
+  height: 300px;
+  border-radius: 5%;
+  object-fit: cover;
+}
+
+.testimonial p {
+color: white;
+font-size: 20px;
+text-align: center;
+}
+
+.testimonial-stars{
+  text-align: center;
+  font-size: medium;
+  color: #e0a606;
 }
 
 .scrolling-wrapper {
@@ -362,42 +285,87 @@ header nav a {
   width: max-content;
 }
 
-.testimonial-container {
-  background-color: #48685e;
-  border-radius: 2em;
-  padding: 1em;
-  width: 260px;
-  min-width: 260px;
-  max-height: 500px;
-  flex-shrink: 0;
+.solutions {
+  background: #0e4f3c00;
+  min-height: 200px; /* Занимает весь экран */
+  padding: 80px 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  color: white;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  justify-content: center;
+  text-align: center;
 }
 
-.testimonial-image img {
+.solutions h2 {
+  font-size: 28px;
+  margin-bottom: 40px;
+  color: #000000;
+}
+
+.solution-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  align-items: stretch; /* Чтобы все карточки были одинаковой высоты */
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.solution-card {
+  background: #FFFFFF;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  max-width: 380px;       /* было 320px — увеличил */
+  flex: 1 1 320px;         /* позволяет карточкам растягиваться */
+  padding: 90px 60px;      /* было 30px 25px — увеличил */
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.solution-card img {
   width: 100%;
-  border-radius: 1.5em;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  max-height: 400px;
+  object-fit: contain;
+  margin-bottom: 20px;
 }
 
-.testimonial-text {
+.solution-card h3 {
+  font-size: 20px;
+  color: #E0A608;
+  margin-bottom: 15px;
+}
+
+.solution-card ul {
+  padding-left: 0;
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.solution-card li {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #000000;
+  line-height: 1.5;
+}
+
+.solution-btn {
+  border: 2px solid #E0A608;
+  color: #E0A608;
+  text-decoration: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  display: inline-block;
   font-weight: 500;
-  font-size: 1.1em;
-  margin: 1em 0 0.5em;
-  text-align: center;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-.testimonial-stars {
-  font-size: 1em;
-  color: #c08e05;
   text-align: center;
 }
 
+.solution-btn:hover {
+  background-color: #E0A608;
+  color: #fff;
+}
 
 .contact-section h2 {
   font-size: 2em;
@@ -476,7 +444,7 @@ header nav a {
 }
 
 
-.lang-switcher button {
+.lang-switcher a {
   background-color: #D1B139;
   color: #0B3D2E;
   border: none;
@@ -608,4 +576,431 @@ header nav a {
 
 .lang-switcher-burger button:hover {
   background-color: #b89830;
+}
+
+.clients-section {
+  text-align: center;
+  padding: 60px 20px;
+  background: #0e4f3c00;
+  color: #080808;
+}
+
+.clients-section h2 {
+  font-size: 28px;
+  margin-bottom: 40px;
+}
+
+.client-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.client-card {
+  background: #f9f9f9;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  padding: 30px 20px;
+  width: 300px;
+  height: 220px;
+  transition: transform 0.3s ease;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* вот это центрирует по вертикали */
+  text-align: center;
+}
+
+.client-card:hover {
+  transform: translateY(-5px);
+}
+
+.client-card img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 15px;
+}
+
+
+.client-card p {
+  font-size: 16px;
+  font-weight: 500;
+  margin: 0;
+}
+
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.4);
+  max-width: 1400px;
+  width: 100%;
+  gap: 40px;
+  transform: scale(1.05);
+  margin: 0 auto; /* Центрируем */
+  justify-content: center; /* Центрируем контент */
+  align-items: center;     /* Центрирование по вертикали */
+}
+
+    .left, .right {
+      flex: 1 1 300px;
+    }
+    h1 {
+      font-size: 24px;
+      margin-bottom: 15px;
+      margin-left: 30px;
+      text-align: left;
+    }
+    .left p {
+      font-size: 18px;
+      margin-top: 45px;
+      margin-bottom: 20px;
+      margin-left: 30px;
+      text-align: left;
+    }
+    .left p span {
+      color: green;
+      font-weight: bold;
+      text-align: left;
+    }
+.btn.whatsapp {
+  margin-top: 50px;
+  background: #24D366;
+  display: inline-flex;
+  align-items: center;
+  font-size: 16px;
+  padding: 14px 30px;
+  color: white;
+  text-decoration: none;
+  border: 2px solid #ffffff;
+  border-radius: 6px;
+  gap: 10px; /* расстояние между иконкой и текстом */
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.btn.whatsapp i {
+  font-size: 20px;
+}
+
+    .calculator {
+      background: linear-gradient(135deg, #1d805b, #22b97f);
+      color: #fff;
+      border-radius: 12px;
+      padding: 32px;
+      font-size: 18px;
+      margin-right: 30px;
+    }
+    .calculator label {
+      display: block;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+    .calculator input[type="range"] {
+      width: 100%;
+    }
+    .calculator .output {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 5px;
+      color: #fff;
+    }
+    .calculator .result {
+      margin-top: 20px;
+      font-size: 20px;
+    }
+
+    .calculator button {
+      margin-top: 20px;
+      padding: 14px 24px;
+      font-size: 18px;
+      background: #fff;
+      color: #1d805b;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+.partners-section {
+  text-align: center;
+  padding: 60px 20px;
+  background: #fff;
+}
+
+.partners-section h2 {
+  font-size: 22px; /* чуть меньше */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  text-align: center;
+  line-height: 1.4;
+  padding: 0 10px; /* немного внутреннего отступа */
+}
+
+.partners-marquee {
+  overflow: hidden;
+  position: relative;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 20px 0;
+}
+
+.partners-track {
+  display: flex;
+  gap: 40px;
+  animation: scrollLeft 40s linear infinite;
+  width: fit-content;
+}
+
+.partners-track img {
+  height: 50px;
+  transition: transform 0.3s ease;
+}
+
+.partners-track img:hover {
+  transform: scale(1.2);
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.container-2 {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.contact-section {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+  padding: 40px;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 28px;
+  margin-bottom: 40px;
+  color: #0e4f3c;
+}
+
+.contact-info-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.info-block {
+  background: #f7f9f9;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.info-block h3 {
+  font-size: 20px;
+  color: #0e4f3c;
+  margin-bottom: 10px;
+}
+
+.info-block ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.info-block li {
+  font-size: 16px;
+  margin: 4px 0;
+  color: #333;
+}
+
+.map-wrapper {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Адаптив */
+@media (min-width: 768px) {
+  .contact-info-wrapper {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .info-block {
+    width: 48%;
+  }
+}
+
+.social-mini-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+  margin-left: 230px;
+}
+
+.social-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 6px;
+  background-color: #19775d;
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.social-icon:hover {
+  background-color: #c08e05;
+  transform: scale(1.1);
+}
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+    transform: none;
+    box-shadow: none;
+  }
+
+  .left, .right {
+    flex: 1 1 100%;
+    margin: 0;
+  }
+
+  .left h1,
+  .left p {
+    text-align: center;
+    margin-left: 0;
+  }
+
+  .btn.whatsapp {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  .social-mini-buttons {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .partners-track {
+    gap: 20px;
+    animation-duration: 25s;
+  }
+
+  .partners-track img {
+    height: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column-reverse; /* Поменяет порядок: калькулятор сверху */
+  }
+
+  .left, .right {
+    margin: 0;
+    padding: 0 15px;
+    width: 100%;
+  }
+
+  .calculator {
+    margin: 0 auto;
+  }
+
+  .calculator a {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .calculator button {
+    width: 100%;
+    max-width: 300px;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+
+  .social-mini-buttons {
+    justify-content: center;
+    margin-left: 0;
+  }
+
+  .left p,
+  .left h1 {
+    text-align: center;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-info-wrapper {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .info-block {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .info-wrapper {
+    min-height: 100vh;
+  }
+  
+  .partners-section {
+    overflow-x: hidden;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .partners-section h2 {
+    font-size: 18px;
+    padding: 0 16px;
+    text-align: center;
+    line-height: 1.4;
+    word-break: break-word;
+    white-space: normal;
+    overflow-wrap: break-word;
+  }
+
+  .partners-track {
+    flex-wrap: nowrap;
+  }
+}
+
+@media (max-width: 480px) {
+  .partners-section h2 {
+    font-size: 18px;
+  }
 }

@@ -9,9 +9,9 @@
   <!-- Font Awesome 6 CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <meta charset="UTF-8">
+  <title>Пример Bootstrap 5.3.3</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
   
   
   <script>
@@ -44,6 +44,7 @@
         }
       });
   </script>
+
 </head>
 <body>
 
@@ -61,11 +62,11 @@
     </label>
 
     <div class="menu-content">
-      <a href="Polit.html">Саясат</a>
-      <a href="#info_text">Біз туралы</a>
-      <a href="#about">Қызметтер</a>
-      <a href="#reviewes">Пікірлер</a>
-      <a href="#contact-form">Байланыс</a>
+      <a href="Polit.html">Policy</a>
+      <a href="#info_text">About Us</a>
+      <a href="#about">Services</a>
+      <a href="#reviewes">Reviews</a>
+      <a href="#contact-form">Contacts</a>
       <div class="lang-switcher">
         <a href="RUS.html">RUS</a>
         <a href="index.html">KAZ</a>
@@ -79,10 +80,10 @@
   <div class="info-wrapper">
       <div class="container">
         <div class="left">
-          <h1>Zen Finance-пен несие мақұлдау</h1>
-          <p>Өтінімдердің <span>87%-на</span> дейін <span>1 сағат</span>. ішінде мақұлдау. Құжаттар минималды — <span>тек жеке куәлік қажет</span>.</p>
+          <h1>Loan approval with Zen Finance</h1>
+          <p>Up to <span>87%</span> of applications approved in just <span>1 hour</span>. Minimal paperwork — only an <span>ID is required</span>.</p>
           <a href="https://wa.me/77001234567" class="btn whatsapp" target="_blank">
-            <i class="fa-brands fa-whatsapp"></i>WhatsApp-пен байлансу
+            <i class="fa-brands fa-whatsapp"></i> Contact on WhatsApp
           </a>
           <div class="social-mini-buttons">
             <a href="https://www.instagram.com/zen_finance04?igsh=N25wdXk2bWF3cjdl target=_blank" class="social-icon">
@@ -97,7 +98,7 @@
           </div>
         </div>
         <div class="right calculator">
-          <label for="amount">Несие сомасы</label>
+          <label for="amount">Loan amount</label>
           <input type="range" id="amount" min="500000" max="10000000" step="100000" value="2800000" oninput="updateValues()">
           <div class="output">
             <span>500 000 ₸</span>
@@ -105,21 +106,21 @@
             <span>10 000 000 ₸</span>
           </div>
 
-          <label for="term">Несие мерзімі</label>
+          <label for="term">Loan term</label>
           <input type="range" id="term" min="12" max="84" step="1" value="60" oninput="updateValues()">
           <div class="output">
-            <span>12 ай</span>
-            <span id="term-value">60 ай</span>
-            <span>84 ай</span>
+            <span>12 months</span>
+            <span id="term-value">60 months</span>
+            <span>84 months</span>
           </div>
 
           <div class="result">
-            <div>Ай сайынғы төлем: <strong id="monthly-payment">101 172 ₸</strong></div>
-            <div>Күніне артық төлем: <strong id="daily-overpay">1 816,9 ₸</strong></div>
+            <div>Monthly payment: <strong id="monthly-payment">101 172 ₸</strong></div>
+            <div>Daily overpayment: <strong id="daily-overpay">1 816,9 ₸</strong></div>
           </div>
 
           <a href="https://wa.me/77001234567" target="_blank">
-            <button>Несиені алу</button>
+            <button>Get a loan</button>
           </a>
         </div>
       </div>
@@ -129,59 +130,59 @@
   <div class="info-wrapper">
 
   <section class="clients-section">
-    <h2>Несиеге мақұлдаудың жеңіл жолы</h2>
+    <h2>A simple path to approval</h2>
     <div class="client-cards">
       <div class="client-card">
         <img src="https://files.catbox.moe/1ljimz.png" alt="icon" />
-        <p>21 жастан 75 жасқа дейінгі адамдарға жарамды</p>
+        <p>Suitable for ages 21 to 75</p>
       </div>
       <div class="client-card">
         <img src="https://files.catbox.moe/pwhz2t.png" alt="icon" />
-        <p>Ең бастысы — қазіргі мерзімі өткен қарыздардың болмауы</p>
+        <p>Most important — no current overdue payments</p>
       </div>
       <div class="client-card">
         <img src="https://files.catbox.moe/5qaegp.png" alt="icon" />
-        <p>Белсенді несие тарихы болмаса да болады</p>
+        <p>No active credit schedule required</p>
       </div>
       <div class="client-card">
         <img src="https://files.catbox.moe/56i2eq.png" alt="icon" />
-        <p>Таза салық тарихы – мақұлдау ықтималдығын арттырады</p>
+        <p> Clean tax history — increases your chances</p>
       </div>
     </div>
   </section>
 
   <section class="solutions">
-    <h2>Сізге арналған шешімдеріміз</h2>
+    <h2>Our solutions for you</h2>
     <div class="solution-grid">
 
       <div class="solution-card">
         <img src="https://files.catbox.moe/ack5l6.png" alt="Беззалоговый кредит">
-        <h3>Кепілсіз несие</h3>
+        <h3>Unsecured loan</h3>
         <ul>
-          <li>💰 Кез келген мақсатқа 10 000 000 ₸ дейін алыңыз</li>
-          <li>📄 Кепілсіз және анықтамасыз, тек ЖСН бойынша</li>
+          <li>💰 Get up to 10,000,000₸ for any purpose</li>
+          <li>📄 No collateral or income proof needed, only IIN</li>
         </ul>
-        <a href="https://wa.me/77001234567" class="solution-btn">Онлайн кеңес алу →</a>
+        <a href="#contact" class="solution-btn">Online consultation  →</a>
       </div>
 
       <div class="solution-card">
         <img src="https://files.catbox.moe/9l5yy4.png" alt="Рефинансирование">
-        <h3>Рефинанслау</h3>
+        <h3>Refinancing</h3>
         <ul>
-          <li>🔁 Қымбат несиелерді жап – аз төл</li>
-          <li>📉 Бірнеше төлемді бір төлемге біріктіреміз</li>
+          <li>🔁 Close expensive loans — pay less</li>
+          <li>📉 Combine multiple payments into one</li>
         </ul>
-        <a href="https://wa.me/77001234567" class="solution-btn">Аз төле →</a>
+        <a href="#contact" class="solution-btn">Pay less →</a>
       </div>
 
       <div class="solution-card">
         <img src="https://img.freepik.com/premium-vector/politician-concept-political-party-program-building-lawmaking-public-administration_566886-1634.jpg" alt="Залоговый кредит">
-        <h3>Кепілді несие</h3>
+        <h3>Secured loan</h3>
         <ul>
-          <li>🏠 Жылжымайтын мүлік кепілдігімен үлкен сома</li>
-          <li>✅ Банктерден мақұлдау — барлық рәсімдеуді біз жасаймыз</li>
+          <li>🏠 Large amount secured by real estate</li>
+          <li>✅ Bank approval — we handle all paperwork</li>
         </ul>
-        <a href="https://wa.me/77001234567" class="solution-btn">Тегін кеңес →</a>
+        <a href="#contact" class="solution-btn">Free consultation  →</a>
       </div>
 
     </div>
@@ -189,47 +190,47 @@
   
     <section id="info_text">
       <div class="ZEN">
-         <h2>Zen Finance туралы</h2>
+         <h2>О Zen Finance</h2>
       </div>
       <div class="about-content">
         <div class="about-text">
-          <h4>🟩 Zen Finance — жаңа буындағы консалтинг</h4>
-          <p>Біз – клиенттерге шын көңілмен көмектесетін жас мамандар командасымыз. Біздің мақсат – тек кеңес беру емес, қаржылық мақсатыңызға жету жолында серік болу.</p>
+          <h4>🟩 Zen Finance — next-generation consulting</h4>
+          <p>We are a team of young professionals who truly care about our clients. Our goal is not just to provide advice, but to be a reliable support throughout your financial journey.</p>
 
           <div class="about-text2">
-            <h4>🤝 Біз алғашқы қадамнан бастап қасыңыздамыз</h4>
+            <h4>🤝 We’re with you from the first step</h4>
             <ul>
-              <li> Құжаттарды жинауға және дұрыс рәсімдеуге көмектесеміз</li>
-              <li> Несие тарихы мен төлем қабілеттілігін бағалаймыз</li>
-              <li> Ең тиімді банк пен шарттарды таңдаймыз</li>
-              <li> Несие мақұлданғанға дейін және кейін де бірге боламыз</li>
-              <li> Барлығын қарапайым тілмен түсіндіреміз</li>
+              <li> We'll help you gather and properly prepare documents</li>
+              <li> We'll assess your credit history and financial standing</li>
+              <li> We'll find the best banks and terms</li>
+              <li> We’ll guide you through approval and beyond</li>
+              <li> We'll explain each step in simple terms</li>
             </ul>
           </div>
 
           <div class="about-text3">
-            <h4>🛡 Адалдық. Ашықтық. Тек сіздің мүддеңіз үшін.</h4>
-            <p>Біз жалған уәде бермейміз. Біз шындықты айтамыз. Барлығын сізбен бірге және сіз үшін жасаймыз. Қаржылық шешім жолы қарапайым, түсінікті және әділ болу үшін.</p>
+            <h4>🛡 Honesty. Transparency. Always in your best interest.</h4>
+            <p>We don't make false promises. We explain everything as it is. Everything we do is done with and for you — to make your financial journey simple, clear, and honest.</p>
           </div>
         </div>
 
         <div class="about-video">
           <video controls width="100%" style="border-radius: 20px;">
             <source src="https://files.catbox.moe/kehz5o.mp4" type="video/mp4">
-            Ваш браузер не поддерживает видео.
+            Your browser is not support videos.
           </video>
 
         </div>
       </div>
 
       <div class="about-bottom">
-        <h4>🌱 Жастық — бұл күш</h4>
-        <p>Біз – креативтіміз, батылмыз және жаңа жолдан қорықпаймыз. Zen Finance — бұл құрғақ есеп емес. Бұл сенім, нәтиже және шынайы көмек.</p>
+        <h4>🌱 Youth is strength</h4>
+        <p>We are ambitious, creative, and not afraid to think differently. Zen Finance is not about dry reports — it's about trust, results, and the feeling that you're truly supported.</p>
       </div>
     </section>
 
     <section class="partners-section">
-      <h2>Қазақстан бойынша жетекші банктермен жұмыс жасаймыз</h2>
+      <h2>We work with leading banks across Kazakhstan</h2>
       <div class="partners-marquee">
         <div class="partners-track">
           <!-- Повторяем логотипы 2-3 раза для бесконечного эффекта -->
@@ -255,22 +256,22 @@
   </div>
 <div class="container-2">
   <section id="contact-form" class="contact-section">
-    <h2 class="section-title">Байланыс ақпараты</h2>
+    <h2 class="section-title">Contact Information</h2>
     <div class="contact-info-wrapper">
       <div class="info-block">
-        <h3>🕘 Жұмыс уақыты</h3>
+        <h3>🕘 Working hours</h3>
         <ul>
-          <li>Дүйсенбі — Жексенбі</li>
-          <li>10:00 — 21:00</li>
+          <li>Monday — Sunday</li>
+          <li>10:00 AM — 9:00 PM</li>
         </ul>
       </div>
 
       <div class="info-block">
-        <h3>📍 Біздің мекенжайымыз</h3>
+        <h3>📍 Our address</h3>
         <ul>
-          <li>Улица Маншук Маметовой, 4 / Актобе</li>
-          <li>ТРЦ Керуен Сити, 3 этаж</li>
-          <li>Кабинет C28</li>
+          <li>4 Manshuk Mametova Street / Aktobe</li>
+          <li>Keruen City Mall, 3rd floor</li>
+          <li>Office C28</li>
         </ul>
       </div>
     </div>
@@ -406,7 +407,7 @@
 </section>
 
   <footer>
-    <p>© 2025 ZEN Finance. Барлық құқықтар қорғалған.</p>
+    <p>© 2025 ZEN Finance. All rights reserved.</p>
   </footer>
 
   <!-- Наш рабочий JS -->
@@ -461,7 +462,6 @@
       setLanguage('kz');
     });
   </script>
-  
   <script>
     function updateValues() {
       const amountInput = document.getElementById('amount');
@@ -481,5 +481,21 @@
 
     updateValues(); // Инициализация
   </script>
+  <script>
+  // Блокировка ПКМ
+  document.addEventListener('contextmenu', event => event.preventDefault());
+
+  // Блокировка F12, Ctrl+Shift+I, Ctrl+U
+  document.addEventListener('keydown', event => {
+    if (
+      event.key === 'F12' ||
+      (event.ctrlKey && event.shiftKey && event.key === 'I') ||
+      (event.ctrlKey && event.key === 'U')
+    ) {
+      event.preventDefault();
+    }
+  });
+</script>
+
 </body>
 </html>
