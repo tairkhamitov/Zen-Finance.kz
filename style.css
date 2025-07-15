@@ -1003,5 +1003,9 @@ text-align: center;
   .partners-section h2 {
     font-size: 18px;
   }
+
+  .calculator .output span {
+    font-size: 14px;
+  }
 }
 
